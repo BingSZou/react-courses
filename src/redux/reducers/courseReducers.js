@@ -1,0 +1,12 @@
+import * as types from "../actions/actionTypes";
+
+export default function CourseReducers(state = [], action) {
+  switch (action.type) {
+    case "CREATE_COURSE":
+      return [...state, { ...action.course }];
+    case types.LOAD_COURSES_SUCCESS:
+      return [...state, action.courses];
+    default:
+      return state;
+  }
+}
